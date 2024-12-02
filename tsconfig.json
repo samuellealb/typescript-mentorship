@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "amd",
+    "lib": ["es6", "dom", "dom.iterable", "scripthost"],
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noEmitOnError": true,
+    "sourceMap": true,
+    "removeComments": true,
+    "outFile": "app.js",
+    "baseUrl": ".",
+    "paths": {
+      "undici-types": ["node_modules/undici-types/index.d.ts"]
+    }
+  },
+  "include": ["**/*.ts"]
+}
