@@ -8,6 +8,7 @@
     "noEmitOnError": true,
     "sourceMap": true,
     "removeComments": true,
+    "experimentalDecorators": true,
     "outFile": "app.js",
     "baseUrl": ".",
     "paths": {
