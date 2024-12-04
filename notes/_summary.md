@@ -1,13 +1,21 @@
 # TypeScript Fundamentals Course Plan
 A practical introduction to TypeScript focusing on key differences from JavaScript.
 
-~~### Theory (20 minutes)~~
+### Theory
   - ~~Introduction to TypeScript~~
   - ~~What is TypeScript and why use it?~~
   - ~~Relationship with JavaScript~~
   - ~~TypeScript compilation process~~
   - ~~Setting up a TypeScript development environment~~
-  - ~~tsconfig.json settings~~
+
+## Compiler
+  - ~~`tsc` command line~~
+  - ~~`tsc -w`: Watch mode~~
+  - ~~`tsc --init`: Creating a `tsconfig.json` file~~
+  - ~~`tsconfig.json` file~~
+  - ~~Compiler options~~
+  - ~~Source maps~~
+  - ~~Declaration files~~
 
 ### Core Concepts
 - ~~Static Type System~~

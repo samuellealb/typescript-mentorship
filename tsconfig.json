@@ -2,18 +2,38 @@
   "compilerOptions": {
     "target": "es6",
     "module": "amd",
-    "lib": ["es6", "dom", "dom.iterable", "scripthost"],
+    "lib": ["es6", "dom", "dom.iterable", "scripthost"], // default settings if target is es6
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
     "noEmitOnError": true,
-    "sourceMap": true,
+    // "noEmit": true, // Do not emit output files, only typecheck
+    "sourceMap": true, // Generates corresponding .map files
     "removeComments": true,
     "experimentalDecorators": true,
     "outFile": "app.js",
     "baseUrl": ".",
     "paths": {
       "undici-types": ["node_modules/undici-types/index.d.ts"]
-    }
+    },
+    "strict": true, // Enable all strict type-checking options (see following options)
+    // "noImplicitAny": true, // Raise error on expressions and declarations with an implied 'any' type.
+    // "strictNullChecks": true, // Ensure that null and undefined are only assignable to themselves and any.
+    // "strictFunctionTypes": true, // Ensure function type compatibility is checked strictly.
+    // "strictBindCallApply": true, // Ensure that the 'this' parameter is checked in methods like bind, call, and apply.
+    // "strictPropertyInitialization": true, // Ensure that class properties are initialized in the constructor.
+    // "noImplicitThis": true, // Raise error on 'this' expressions with an implied 'any' type.
+    // "alwaysStrict": true, // Ensure that 'use strict' is always emitted in the output.
+
+    // Additional checks
+    // "noUnusedLocals": true, // Report errors on unused locals.
+    // "noUnusedParameters": true, // Report errors on unused parameters.
+    // "noImplicitReturns": true, // Report error when not all code paths in function return a value.
+    // "noFallthroughCasesInSwitch": true, // Report errors for fallthrough cases in switch statement.
+    // "noUncheckedIndexedAccess": true, // Include 'undefined' in index signature results
+    // "noImplicitOverride": true, // Ensure overriding members in derived classes are marked with an override modifier
+    // "noPropertyAccessFromIndexSignature": true, // Enforces using indexed accessors for keys declared using an indexed type
+    // "noImplicitOverride": true, // Ensure overriding members in derived classes are marked with an override modifier
+    // "noPropertyAccessFromIndexSignature": true, // Enforces using indexed accessors for keys declared using an indexed type
   },
-  "include": ["**/*.ts"]
+  "exclude": ["node_modules"], // default settings
+  "include": ["**/*.ts"],
 }
