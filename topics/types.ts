@@ -1,21 +1,21 @@
-// # Types
+// // # Types
 
-// ###### Type inference
+// // ###### Type inference
 // let number: number;
 // number = 15;
 // console.log('logs from types:: ', typeof number);
 
-// number = "5"; // ERROR: Type '"five"' is not assignable to type 'number'
+// // number = "5"; // ERROR: Type '"five"' is not assignable to type 'number'
 // // console.log(`${number} is a ${typeof number}`); // 5 is a number
 // console.log(typeof number);
 
-// number = [2, 4];
+// // number = [2, 4];
 // console.log(number); // [2, 4]
 
 // const one = 'javascript'
 
 // const test = one.includes('java');
-// number = test;
+// // number = test;
 // console.log(number)
 
 // type product = {
@@ -44,12 +44,12 @@
 
 // console.log(someProduct);
 
-// console.log(`Product.tags type => `, typeof product.tags); // object
-// console.log(`Product.tags[0] type => `, typeof product.tags[0]); // string
+// console.log(`Product.tags type => `, typeof someProduct.tags); // object
+// console.log(`Product.tags[0] type => `, typeof someProduct.tags[0]); // string
 
-// for (const tag of product.tags) {
+// for (const tag of someProduct.tags) {
 //   console.log(tag.toUpperCase()); // GREAT-OFFER, HOT-AND-NEW > valid as tag is a string
-//   console.log(tag.map); // ERROR: Property 'map' does not exist on type 'string'
+//   // console.log(tag.map); // ERROR: Property 'map' does not exist on type 'string'
 // }
 
 // // ###### Tuple
@@ -93,11 +93,11 @@
 //   Blue = 'blue',
 // }
 // let selectedColor: Color;
-// selectedColor = Color.Yellow;
+// // selectedColor = Color.Yellow; // ERROR: Type 'Color.Yellow' is not assignable to type 'Color'
 
 // console.log(typeof Color.Green);
 
-// Color.Blue = 'yellow';
+// // Color.Blue = 'yellow'; // ERROR: Cannot assign to 'Blue' because it is a read-only property
 
 // // // selectedColor = Color.Yellow; // ERROR: Type 'Color.Yellow' is not assignable to type 'Color'
 // // console.log(`Color.Blue is `, Color.Blue); // 1
@@ -144,9 +144,9 @@
 //   console.error({ message: message, errorCode: code });
 // }
 
-// generateError2("Another error occurred!", 505);
+// // generateError2("Another error occurred!", 505);
 
-// generateError("An error occurred!", 400);
+// // generateError("An error occurred!", 400);
 
 // // ###### Array type
 
@@ -226,7 +226,7 @@
 //   return n1 + n2;
 // };
 
-// ###### Function type
+// // ###### Function type
 
 // // let combineValues: Function;
 // let combineValues: (a: number, b: number) => number;
@@ -236,7 +236,7 @@
 // console.log(combineValues); // Output: [Function: add]
 // console.log(combineValues(8, 8)); // Output: 16
 
-// combineValues = printResult;
+// // combineValues = printResult; // Error: Type 'void' is not assignable to type 'number'.
 // console.log(combineValues(8, 8)); // Output: undefined
 
 // function addAndHandle(n1: number, n2: number, cb: (num: number) => void) {
