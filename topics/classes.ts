@@ -1,9 +1,72 @@
-// // #### Classes
+type Atributo = { [key: string]: number };
+
+class Personagem {
+  readonly id: number;
+  public nome: string;
+  public titulo: string | undefined;
+  public classe: string;
+  public atributos: Atributo[] = [];
+  private isDead: boolean = false;
+
+  get nomeCompleto() {
+    return this.titulo ? `${this.nome}, ${this.titulo}` : this.nome;
+  }
+
+  set adicionarTitulo(titulo: string) {
+    this.titulo = titulo;
+  }
+
+  get isAlive() { return  !this.isDead; }
+  set isAlive(value: boolean) { this.isDead = !value; }
+
+
+  protected constructor(nome: string, classe: string) {
+    this.id = Math.floor(Math.random() * 1000) + 1;
+    this.nome = nome;
+    this.classe = classe;
+  }
+
+  protected gerarAtributo(atributo: string) {
+    const attr: Atributo = {};
+    attr[atributo] = Math.floor(Math.random() * 100) + 1;
+    this.atributos.push(attr);
+  }
+
+  static gerarNPC(nome: string, classe: string) {
+    const npc = new Personagem(nome, classe);
+    npc.gerarAtributo("Força");
+    npc.gerarAtributo("Agilidade");
+    npc.gerarAtributo("Destreza");
+    return npc;
+  }
+}
+
+class Guerreiro extends Personagem {
+  constructor(nome: string) {
+    super(nome, "Guerreiro");
+    this.gerarAtributo("Força");
+    this.gerarAtributo("Agilidade");
+    this.gerarAtributo("Destreza");
+  }
+}
+
+const joao = new Guerreiro("João");
+const fulano = Personagem.gerarNPC("Fulano", "Ladrão");
+
+console.log(joao.isAlive);
+joao.isAlive = false;
+console.log(joao.isAlive);
+
+joao.adicionarTitulo = "O Destemido";
+console.log(joao.nomeCompleto);
+
+
+// // // #### Classes
 
 // abstract class Department {
 //   // private readonly id: number; // This is a private property, accessible only within the class and is read-only
 //   // public name: string; // This is a public property, accessible from outside the class. this is default behavior and can be omitted
-//   protected employees: string[] = []; // This is a private property, accessible only within the class
+//   protected employees: string[] = []; // This is a protected property, accessible within the class and in derived classes
 //   static fiscalYear = 2021;
 
 //   constructor(protected readonly id: number, public name: string) {
@@ -13,25 +76,25 @@
 //     // console.log(this.fiscalYear); // Static properties are accessed with the class name
 //   }
 
-//   // Static methods are called on the class itself, not on an instance of the class. They are not available for for the constructor and methods of the class it belongs.
+//   // Static methods are called on the class itself, not on an instance of the class. They are not available for the constructor and methods of the class it belongs.
 //   static createEmployee(name: string) {
 //     return { name: name };
 //   }
 
-//   // describe(this: Department) {
-//   //   console.log(
-//   //     "Department " +
-//   //       this.id +
-//   //       ": " +
-//   //       this.name +
-//   //       "; Employees: " +
-//   //       this.employees.length +
-//   //       ";"
-//   //   );
-//   // }
+//   describe(this: Department) {
+//     console.log(
+//       "Department " +
+//         this.id +
+//         ": " +
+//         this.name +
+//         "; Employees: " +
+//         this.employees.length +
+//         ";"
+//     );
+//   }
 
 //   // Abstract methods must be implemented in the derived classes
-//   abstract describe(this: Department): void;
+//   // abstract describe(this: Department): void;
 
 //   addEmployee(employee: string) {
 //     this.employees.push(employee);

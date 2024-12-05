@@ -52,6 +52,15 @@ addEmployee(employee: string) {
 
 # Getters and Setters: Using get and set keywords.
 
+## Getters
+- Encapsulation: Getters allow you to control how a property is accessed. You can add logic to return a computed value or validate the value before returning it.
+- Read-Only Properties: You can create read-only properties by only defining a getter without a corresponding setter.
+
+## Setters
+- Validation: Setters allow you to add validation logic before a property is set. This ensures that the property always has a valid value.
+- Encapsulation: Setters can hide the internal representation of a property and provide a controlled way to modify it.
+
+
 ```typescript
 get systemIsDown() {
   return this.systemFailure;

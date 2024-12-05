@@ -37,9 +37,9 @@ A practical introduction to TypeScript focusing on key differences from JavaScri
 
 
 ### Object-Oriented Features
-- Classes in TypeScript
-  - Access modifiers (public, private, protected)
-  - Abstract classes
+- ~~Classes in TypeScript~~
+  - ~~Access modifiers (public, private, protected)~~
+  - ~~Abstract classes~~
 - Interfaces
   - Defining and implementing interfaces
   - Optional and readonly properties
