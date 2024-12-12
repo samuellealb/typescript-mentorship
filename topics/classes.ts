@@ -1,64 +1,64 @@
-type Atributo = { [key: string]: number };
+// type Atributo = { [key: string]: number };
 
-class Personagem {
-  readonly id: number;
-  public nome: string;
-  public titulo: string | undefined;
-  public classe: string;
-  public atributos: Atributo[] = [];
-  private isDead: boolean = false;
+// class Personagem {
+//   readonly id: number;
+//   public nome: string;
+//   public titulo: string | undefined;
+//   public classe: string;
+//   public atributos: Atributo[] = [];
+//   private isDead: boolean = false;
 
-  get nomeCompleto() {
-    return this.titulo ? `${this.nome}, ${this.titulo}` : this.nome;
-  }
+//   get nomeCompleto() {
+//     return this.titulo ? `${this.nome}, ${this.titulo}` : this.nome;
+//   }
 
-  set adicionarTitulo(titulo: string) {
-    this.titulo = titulo;
-  }
+//   set adicionarTitulo(titulo: string) {
+//     this.titulo = titulo;
+//   }
 
-  get isAlive() { return  !this.isDead; }
-  set isAlive(value: boolean) { this.isDead = !value; }
+//   get isAlive() { return  !this.isDead; }
+//   set isAlive(value: boolean) { this.isDead = !value; }
 
 
-  protected constructor(nome: string, classe: string) {
-    this.id = Math.floor(Math.random() * 1000) + 1;
-    this.nome = nome;
-    this.classe = classe;
-  }
+//   protected constructor(nome: string, classe: string) {
+//     this.id = Math.floor(Math.random() * 1000) + 1;
+//     this.nome = nome;
+//     this.classe = classe;
+//   }
 
-  protected gerarAtributo(atributo: string) {
-    const attr: Atributo = {};
-    attr[atributo] = Math.floor(Math.random() * 100) + 1;
-    this.atributos.push(attr);
-  }
+//   protected gerarAtributo(atributo: string) {
+//     const attr: Atributo = {};
+//     attr[atributo] = Math.floor(Math.random() * 100) + 1;
+//     this.atributos.push(attr);
+//   }
 
-  static gerarNPC(nome: string, classe: string) {
-    const npc = new Personagem(nome, classe);
-    npc.gerarAtributo("Força");
-    npc.gerarAtributo("Agilidade");
-    npc.gerarAtributo("Destreza");
-    return npc;
-  }
-}
+//   static gerarNPC(nome: string, classe: string) {
+//     const npc = new Personagem(nome, classe);
+//     npc.gerarAtributo("Força");
+//     npc.gerarAtributo("Agilidade");
+//     npc.gerarAtributo("Destreza");
+//     return npc;
+//   }
+// }
 
-class Guerreiro extends Personagem {
-  constructor(nome: string) {
-    super(nome, "Guerreiro");
-    this.gerarAtributo("Força");
-    this.gerarAtributo("Agilidade");
-    this.gerarAtributo("Destreza");
-  }
-}
+// class Guerreiro extends Personagem {
+//   constructor(nome: string) {
+//     super(nome, "Guerreiro");
+//     this.gerarAtributo("Força");
+//     this.gerarAtributo("Agilidade");
+//     this.gerarAtributo("Destreza");
+//   }
+// }
 
-const joao = new Guerreiro("João");
-const fulano = Personagem.gerarNPC("Fulano", "Ladrão");
+// const joao = new Guerreiro("João");
+// const fulano = Personagem.gerarNPC("Fulano", "Ladrão");
 
-console.log(joao.isAlive);
-joao.isAlive = false;
-console.log(joao.isAlive);
+// console.log(joao.isAlive);
+// joao.isAlive = false;
+// console.log(joao.isAlive);
 
-joao.adicionarTitulo = "O Destemido";
-console.log(joao.nomeCompleto);
+// joao.adicionarTitulo = "O Destemido";
+// console.log(joao.nomeCompleto);
 
 
 // // // #### Classes

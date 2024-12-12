@@ -40,21 +40,21 @@ A practical introduction to TypeScript focusing on key differences from JavaScri
 - ~~Classes in TypeScript~~
   - ~~Access modifiers (public, private, protected)~~
   - ~~Abstract classes~~
-- Interfaces
-  - Defining and implementing interfaces
-  - Optional and readonly properties
-  - Extending interfaces
-  - Implementing interfaces in classes
+- ~~Interfaces~~
+  - ~~Defining and implementing interfaces~~
+  - ~~Optional and readonly properties~~
+  - ~~Extending interfaces~~
+  - ~~Implementing interfaces in classes~~
 
 ### Generics
-- Generics basics
-  - Generic functions
-  - Generic interfaces
-  - Generic classes
-- Utility Types
-  - Partial<T>, Readonly<T>
-  - Pick<T>, Record<K,T>
-  - ReturnType<T>, Parameters<T>
+- ~~Generics basics~~
+  - ~~Generic functions~~
+  - ~~Generic interfaces~~
+  - ~~Generic classes~~
+- ~~Utility Types~~
+  - ~~Partial<T>, Readonly<T>~~
+  - ~~Pick<T>, Record<K,T>~~
+  - ~~ReturnType<T>, Parameters<T>~~
 
 ### Decorators
 - Introduction to Decorators
